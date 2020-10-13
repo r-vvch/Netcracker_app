@@ -1,8 +1,13 @@
+package com.edu_netcracker.todo.services;
+
+import com.edu_netcracker.todo.entities.Task;
+import com.edu_netcracker.todo.entities.ToDoList;
+
 import java.io.*;
 import java.util.List;
 import java.util.Scanner;
 
-public class ToDoManager {
+public class FileService {
     /**
      * Записывает существующий список задач в файл
      * @param toDoList - существующий список задач
@@ -38,12 +43,13 @@ public class ToDoManager {
         while (scan.hasNextLine()) {
             buf = scan.nextLine();
             if (buf.startsWith("###")) {
-                // начало файла --- ### <имя списка>
+                // начало файла -- ### <имя списка>
                 toDoList.setName(buf.substring(4));
 
             } else if (buf.charAt(0) == '$') {
                 // конец файла
                 fr.close();
+//                System.out.println("SUCCESS");
                 return toDoList;
 
             } else {

@@ -1,3 +1,5 @@
+package com.edu_netcracker.todo.entities;
+
 public class Task {
     private Long id;
     private String name;
@@ -5,12 +7,12 @@ public class Task {
 
     public Task() {
         setName("New task");
-        setId();
+        setCompletion(false);
     }
 
     public Task(String name) {
         setName(name);
-        setId();
+        setCompletion(false);
     }
 
     public Long getId() {
@@ -25,8 +27,16 @@ public class Task {
         return isDone;
     }
 
-    public void setId() {
-        this.id = 0L;
+    public String getPrettyCompletion() {
+        if (isDone) {
+            return "[v]";
+        } else {
+            return "[ ]";
+        }
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public void setName(String name) {
