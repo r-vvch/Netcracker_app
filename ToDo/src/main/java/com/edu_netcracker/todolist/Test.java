@@ -1,13 +1,13 @@
-package com.edu_netcracker.todo;
+package com.edu_netcracker.todolist;
 
-import com.edu_netcracker.todo.entities.Task;
-import com.edu_netcracker.todo.entities.ToDoList;
-import com.edu_netcracker.todo.services.FileService;
-import com.edu_netcracker.todo.services.IdService;
+import com.edu_netcracker.todolist.entities.Task;
+import com.edu_netcracker.todolist.entities.ToDoList;
+import com.edu_netcracker.todolist.services.IdService;
+import com.edu_netcracker.todolist.services.impl.IdSimple;
 
 public class Test {
     public static void main(String[] args) {
-        IdService idService = new IdService();
+        IdService idService = new IdSimple();
 
         Task wakeUp = new Task("wake up");
         idService.setTaskId(wakeUp);

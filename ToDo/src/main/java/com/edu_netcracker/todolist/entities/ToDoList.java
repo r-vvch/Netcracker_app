@@ -1,4 +1,4 @@
-package com.edu_netcracker.todo.entities;
+package com.edu_netcracker.todolist.entities;
 
 import java.util.ArrayList;
 import java.util.List;

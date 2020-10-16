@@ -1,13 +1,20 @@
-package com.edu_netcracker.todo;
+package com.edu_netcracker.todolist;
 
-import com.edu_netcracker.todo.entities.ToDoList;
-import com.edu_netcracker.todo.services.FileService;
-import com.edu_netcracker.todo.services.AppService;
+import com.edu_netcracker.todolist.entities.ToDoList;
+import com.edu_netcracker.todolist.services.AppService;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 import java.util.Scanner;
 
+
 public class Main {
+    static final Logger LOGGER = LogManager.getLogger(Main.class);
+
     public static void main(String[] args) throws Exception {
+
+        LOGGER.info("Hello World!");
+
         String command;
         ToDoList toDoList;
         AppService appService = new AppService();
@@ -23,6 +30,7 @@ public class Main {
             String[] commands = command.split(" ");
             switch (commands[0]) {
                 case "add":
+//                    todo: разобраться, что с двумя словами
                     appService.addTask(commands[1]);
                     break;
                 case "set":
@@ -36,10 +44,17 @@ public class Main {
                     }
                     break;
                 case "delete":
-                    appService.deleteTask(Long.parseLong(commands[1]));
-                    break;
+//                    todo: Обработать, если передаётся название
+//                    if (commands[1].matches("[0-9]+")) {
+                        appService.deleteTask(Long.parseLong(commands[1]));
+                        break;
+//                    } else {
+//                        System.out.println("Bad command, try again");
+//                        command = scanner.nextLine();
+//                    }
                 default:
                     System.out.println("Bad command, try again");
+                    command = scanner.nextLine();
             }
             appService.printList();
             System.out.print("> ");

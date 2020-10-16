@@ -1,14 +1,18 @@
-package com.edu_netcracker.todo.services;
+package com.edu_netcracker.todolist.services;
 
-import com.edu_netcracker.todo.entities.Task;
-import com.edu_netcracker.todo.entities.ToDoList;
+import com.edu_netcracker.todolist.entities.Task;
+import com.edu_netcracker.todolist.entities.ToDoList;
+import com.edu_netcracker.todolist.services.impl.IdSimple;
+import com.edu_netcracker.todolist.services.impl.JsonFileService;
 
 import java.util.Scanner;
 
 public class AppService {
-    IdService idService = new IdService();
-    FileService fs = new FileService();
+    IdService idService = new IdSimple();
+    ToDoListKeeper keeper = new JsonFileService();
     Scanner scanner = new Scanner(System.in);
+
+//    todo: сделать адекватным интерфейсом
 
     private ToDoList toDoList;
 
@@ -22,7 +26,7 @@ public class AppService {
             toDoList.setName(listName);
         } else {
             System.out.println("Loading saved list...");
-            toDoList = fs.readToDoList();
+            toDoList = keeper.readToDoList();
             idService.setListId(toDoList);
             for (int i = 0; i < toDoList.getTasks().size(); i++) {
                 idService.setTaskId(toDoList.getTasks().get(i));
@@ -58,6 +62,6 @@ public class AppService {
     }
 
     public void saveList() throws Exception {
-        fs.writeToDoList(toDoList);
+        keeper.writeToDoList(toDoList);
     }
 }

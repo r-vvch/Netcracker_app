@@ -1,18 +1,15 @@
-package com.edu_netcracker.todo.services;
+package com.edu_netcracker.todolist.services.impl;
 
-import com.edu_netcracker.todo.entities.Task;
-import com.edu_netcracker.todo.entities.ToDoList;
+import com.edu_netcracker.todolist.entities.Task;
+import com.edu_netcracker.todolist.entities.ToDoList;
+import com.edu_netcracker.todolist.services.ToDoListKeeper;
 
 import java.io.*;
 import java.util.List;
 import java.util.Scanner;
 
-public class FileService {
-    /**
-     * Записывает существующий список задач в файл
-     * @param toDoList - существующий список задач
-     * @throws Exception
-     */
+public class FileService implements ToDoListKeeper {
+    @Override
     public void writeToDoList(ToDoList toDoList) throws Exception {
         FileWriter fw = new FileWriter("to-do.txt");
 
@@ -29,10 +26,7 @@ public class FileService {
         fw.close();
     }
 
-    /**
-     * Читает список задач из файла и формирует ToDoList
-     * @throws Exception
-     */
+    @Override
     public ToDoList readToDoList() throws Exception {
         ToDoList toDoList = new ToDoList();
 

@@ -1,4 +1,6 @@
-package com.edu_netcracker.todo.entities;
+package com.edu_netcracker.todolist.entities;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class Task {
     private Long id;
@@ -27,6 +29,7 @@ public class Task {
         return isDone;
     }
 
+    @JsonIgnore
     public String getPrettyCompletion() {
         if (isDone) {
             return "[v]";
