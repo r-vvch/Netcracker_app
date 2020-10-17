@@ -1,13 +1,13 @@
 package com.edu_netcracker.todolist.services.impl;
 
 import com.edu_netcracker.todolist.entities.ToDoList;
-import com.edu_netcracker.todolist.services.ToDoListKeeper;
+import com.edu_netcracker.todolist.services.SaveService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.FileReader;
 import java.io.FileWriter;
 
-public class JsonFileService implements ToDoListKeeper {
+public class SaveJson implements SaveService {
     private ObjectMapper objectMapper = new ObjectMapper();
     private static final String FILE_NAME = "to-do.json";
 

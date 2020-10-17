@@ -5,10 +5,15 @@ import com.edu_netcracker.todolist.entities.ToDoList;
 
 public interface IdService {
     /**
-     * todo: написать нормальный JavaDoc
+     * Задаёт id Task'а
+     * @param task - Task, которому задаётся id
      */
-    public void setTaskId(Task task);
+    void setTaskId(Task task);
 
-    public void setListId(ToDoList toDoList);
+    /**
+     * Задаёт id ToDoList'а
+     * @param toDoList - ToDoList, которому задаётся id
+     */
+    void setListId(ToDoList toDoList);
 
 }

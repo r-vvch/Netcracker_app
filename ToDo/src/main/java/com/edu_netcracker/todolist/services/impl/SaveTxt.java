@@ -2,13 +2,13 @@ package com.edu_netcracker.todolist.services.impl;
 
 import com.edu_netcracker.todolist.entities.Task;
 import com.edu_netcracker.todolist.entities.ToDoList;
-import com.edu_netcracker.todolist.services.ToDoListKeeper;
+import com.edu_netcracker.todolist.services.SaveService;
 
 import java.io.*;
 import java.util.List;
 import java.util.Scanner;
 
-public class FileService implements ToDoListKeeper {
+public class SaveTxt implements SaveService {
     @Override
     public void writeToDoList(ToDoList toDoList) throws Exception {
         FileWriter fw = new FileWriter("to-do.txt");
@@ -43,7 +43,6 @@ public class FileService implements ToDoListKeeper {
             } else if (buf.charAt(0) == '$') {
                 // конец файла
                 fr.close();
-//                System.out.println("SUCCESS");
                 return toDoList;
 
             } else {

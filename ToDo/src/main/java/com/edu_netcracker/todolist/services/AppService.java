@@ -1,67 +1,49 @@
 package com.edu_netcracker.todolist.services;
 
-import com.edu_netcracker.todolist.entities.Task;
 import com.edu_netcracker.todolist.entities.ToDoList;
-import com.edu_netcracker.todolist.services.impl.IdSimple;
-import com.edu_netcracker.todolist.services.impl.JsonFileService;
 
-import java.util.Scanner;
+public interface AppService {
+    /**
+     * Начинает работу с приложением
+     * Предлагает выбор - создать новый лист или загрузить из памяти
+     * Соответственно, на данном этапе создаёт лист или загружает сохранённый
+     * @return созданный toDoList
+     * @throws Exception
+     */
+    ToDoList start() throws Exception;
 
-public class AppService {
-    IdService idService = new IdSimple();
-    ToDoListKeeper keeper = new JsonFileService();
-    Scanner scanner = new Scanner(System.in);
+    /**
+     * Добавляет Task
+     * @param name - имя Task'а
+     */
+    void addTask(String name);
 
-//    todo: сделать адекватным интерфейсом
+    /**
+     * Удаляет заданный по id Task
+     * @param id - id, по которому производится удаление
+     */
+    void deleteTask(Long id);
 
-    private ToDoList toDoList;
+    /**
+     * Задаёт Task'у с данным id статус выполненного
+     * @param id - id, по которому производятся изменения
+     */
+    void setTaskDone(Long id);
 
-    public ToDoList start() throws Exception {
-        System.out.print("Start a new to-do list? [y/n]\n> ");
-        if (scanner.nextLine().equals("y")) {
-            toDoList = new ToDoList();
-            idService.setListId(toDoList);
-            System.out.print("Enter list name: ");
-            String listName = scanner.nextLine();
-            toDoList.setName(listName);
-        } else {
-            System.out.println("Loading saved list...");
-            toDoList = keeper.readToDoList();
-            idService.setListId(toDoList);
-            for (int i = 0; i < toDoList.getTasks().size(); i++) {
-                idService.setTaskId(toDoList.getTasks().get(i));
-            }
-        }
-        return toDoList;
-    }
+    /**
+     * Задаёт Task'у с данным id статус невыполненного
+     * @param id - id, по которому производятся изменения
+     */
+    void setTaskUndone(Long id);
 
-    public void addTask(String name) {
-        Task task = new Task(name);
-        idService.setTaskId(task);
-        toDoList.addTask(task);
-    }
+    /**
+     * Печатает текущий toDoList
+     */
+    void printList();
 
-    public void deleteTask(Long id) {
-        toDoList.deleteTask(id - 1L);
-    }
-
-    public void setTaskDone(Long id) {
-        toDoList.getTasks().get(id.intValue() - 1).setCompletion(true);
-    }
-
-    public void setTaskUndone(Long id) {
-        toDoList.getTasks().get(id.intValue() - 1).setCompletion(false);
-    }
-
-    public void printList() {
-        System.out.println(toDoList.getName() + ":");
-        for (int i = 0; i < toDoList.getTasks().size(); i++) {
-            System.out.println(toDoList.getTasks().get(i).getId() + ". " +
-                    toDoList.getTasks().get(i).getName() + " " + toDoList.getTasks().get(i).getPrettyCompletion());
-        }
-    }
-
-    public void saveList() throws Exception {
-        keeper.writeToDoList(toDoList);
-    }
+    /**
+     * Сохраняет текущий toDoList
+     * @throws Exception
+     */
+    void saveList() throws Exception;
 }

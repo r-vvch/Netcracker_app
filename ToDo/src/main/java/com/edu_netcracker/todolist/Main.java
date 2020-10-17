@@ -2,6 +2,7 @@ package com.edu_netcracker.todolist;
 
 import com.edu_netcracker.todolist.entities.ToDoList;
 import com.edu_netcracker.todolist.services.AppService;
+import com.edu_netcracker.todolist.services.impl.AppConsole;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
@@ -16,12 +17,11 @@ public class Main {
         LOGGER.info("Hello World!");
 
         String command;
-        ToDoList toDoList;
-        AppService appService = new AppService();
+        AppService appService = new AppConsole();
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Welcome to the world's finest to-do app!");
-        toDoList = appService.start();
+        appService.start();
         appService.printList();
         System.out.print("> ");
 
@@ -30,9 +30,13 @@ public class Main {
             String[] commands = command.split(" ");
             switch (commands[0]) {
                 case "add":
-//                    todo: разобраться, что с двумя словами
-                    appService.addTask(commands[1]);
+                    StringBuilder buf = new StringBuilder(commands[1]);
+                    for (int i = 2; i < commands.length; i++) {
+                        buf.append(" ").append(commands[i]);
+                    }
+                    appService.addTask(buf.toString());
                     break;
+
                 case "set":
                     if (commands[2].equals("done")) {
                         appService.setTaskDone(Long.parseLong(commands[1]));
@@ -40,21 +44,21 @@ public class Main {
                         appService.setTaskUndone(Long.parseLong(commands[1]));
                     } else {
                         System.out.println("Bad command, try again");
-                        command = scanner.nextLine();
                     }
                     break;
+
                 case "delete":
-//                    todo: Обработать, если передаётся название
-//                    if (commands[1].matches("[0-9]+")) {
+                    if (!commands[1].matches("[0-9]+")) {
+                        System.out.println("Bad command, try again");
+                        break;
+                    } else {
                         appService.deleteTask(Long.parseLong(commands[1]));
                         break;
-//                    } else {
-//                        System.out.println("Bad command, try again");
-//                        command = scanner.nextLine();
-//                    }
+                    }
+
                 default:
-                    System.out.println("Bad command, try again");
-                    command = scanner.nextLine();
+                    System.out.print("Bad command, try again\n> ");
+                    break;
             }
             appService.printList();
             System.out.print("> ");

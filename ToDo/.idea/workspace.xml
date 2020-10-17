@@ -19,23 +19,26 @@
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
-    <select />
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c3515f7d-c382-4e2e-b331-5f48af2ae37e" name="Default Changelist" comment="console application is done!">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/edu_netcracker/todolist/services/ToDoListKeeper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/edu_netcracker/todolist/services/impl/IdSimple.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/edu_netcracker/todolist/services/impl/JsonFileService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/log4j.properties" afterDir="false" />
+    <list default="true" id="c3515f7d-c382-4e2e-b331-5f48af2ae37e" name="Default Changelist" comment="Json and logger added;&#10;still a lot to do">
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/edu_netcracker/todolist/services/impl/AppConsole.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/edu_netcracker/todo/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/edu_netcracker/todolist/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/edu_netcracker/todo/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/edu_netcracker/todolist/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/edu_netcracker/todo/entities/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/edu_netcracker/todolist/entities/Task.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/edu_netcracker/todo/entities/ToDoList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/edu_netcracker/todolist/entities/ToDoList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/edu_netcracker/todo/services/AppService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/edu_netcracker/todolist/services/AppService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/edu_netcracker/todo/services/FileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/edu_netcracker/todolist/services/impl/FileService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/edu_netcracker/todo/services/IdService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/edu_netcracker/todolist/services/IdService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/edu_netcracker/todolist/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/edu_netcracker/todolist/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/edu_netcracker/todolist/services/AppService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/edu_netcracker/todolist/services/AppService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/edu_netcracker/todolist/services/IdService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/edu_netcracker/todolist/services/IdService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/edu_netcracker/todolist/services/ToDoListKeeper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/edu_netcracker/todolist/services/SaveService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/edu_netcracker/todolist/services/impl/FileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/edu_netcracker/todolist/services/impl/SaveTxt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/edu_netcracker/todolist/services/impl/JsonFileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/edu_netcracker/todolist/services/impl/SaveJson.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +59,7 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="mavenHome" value="C:\Program Files\JetBrains\IntelliJ IDEA 2020.2\plugins\maven\lib\maven3" />
+        <option name="mavenHome" value="C:\Program Files\JetBrains\IntelliJ IDEA 2020.2.3\plugins\maven\lib\maven3" />
       </MavenGeneralSettings>
     </option>
   </component>
@@ -72,6 +75,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="JAVA" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -81,6 +85,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.19485295" />
@@ -120,8 +125,8 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Test" />
       <item itemvalue="Application.Main" />
+      <item itemvalue="Application.Test" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -136,7 +141,10 @@
       <workItem from="1602428244817" duration="6733000" />
       <workItem from="1602563866120" duration="9397000" />
       <workItem from="1602691412765" duration="6560000" />
-      <workItem from="1602863968583" duration="1893000" />
+      <workItem from="1602863968583" duration="2380000" />
+      <workItem from="1602868111001" duration="734000" />
+      <workItem from="1602869421200" duration="628000" />
+      <workItem from="1602893889042" duration="4204000" />
     </task>
     <task id="LOCAL-00001" summary="basic classes implemented">
       <created>1602124035203</created>
@@ -152,7 +160,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602572969628</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Json and logger added;&#10;still a lot to do">
+      <created>1602866119137</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1602866119137</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -163,7 +178,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -173,7 +200,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="basic classes implemented" />
     <MESSAGE value="console application is done!" />
-    <option name="LAST_COMMIT_MESSAGE" value="console application is done!" />
+    <MESSAGE value="Json and logger added;&#10;still a lot to do" />
+    <option name="LAST_COMMIT_MESSAGE" value="Json and logger added;&#10;still a lot to do" />
   </component>
   <component name="WindowStateProjectService">
     <state x="121" y="0" key="#Project_Structure" timestamp="1602078787294">
@@ -184,10 +212,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="219" y="30" width="1097" height="794" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1602692660922" />
-    <state x="527" y="50" key="#com.intellij.ide.util.MemberChooser" timestamp="1602864837792">
+    <state x="527" y="50" key="#com.intellij.ide.util.MemberChooser" timestamp="1602895123600">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="527" y="50" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1602864837792" />
+    <state x="527" y="50" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1602895123600" />
     <state x="432" y="167" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1602568574733">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -200,50 +228,54 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="532" y="108" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1602436463709" />
-    <state width="1481" height="200" key="GridCell.Tab.0.bottom" timestamp="1602865465383">
+    <state width="1481" height="218" key="GridCell.Tab.0.bottom" timestamp="1602898085494">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1481" height="200" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1602865465383" />
-    <state width="1481" height="200" key="GridCell.Tab.0.center" timestamp="1602865465383">
+    <state width="1481" height="218" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1602898085494" />
+    <state width="1481" height="218" key="GridCell.Tab.0.center" timestamp="1602898085494">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1481" height="200" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1602865465383" />
-    <state width="1481" height="200" key="GridCell.Tab.0.left" timestamp="1602865465383">
+    <state width="1481" height="218" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1602898085494" />
+    <state width="1481" height="218" key="GridCell.Tab.0.left" timestamp="1602898085494">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1481" height="200" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1602865465383" />
-    <state width="1481" height="200" key="GridCell.Tab.0.right" timestamp="1602865465383">
+    <state width="1481" height="218" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1602898085494" />
+    <state width="1481" height="218" key="GridCell.Tab.0.right" timestamp="1602898085494">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1481" height="200" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1602865465383" />
-    <state width="1481" height="233" key="GridCell.Tab.1.bottom" timestamp="1602596292381">
+    <state width="1481" height="218" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1602898085494" />
+    <state width="1481" height="233" key="GridCell.Tab.1.bottom" timestamp="1602896582504">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1481" height="233" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1602596292381" />
-    <state width="1481" height="233" key="GridCell.Tab.1.center" timestamp="1602596292381">
+    <state width="1481" height="233" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1602896582504" />
+    <state width="1481" height="233" key="GridCell.Tab.1.center" timestamp="1602896582504">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1481" height="233" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1602596292381" />
-    <state width="1481" height="233" key="GridCell.Tab.1.left" timestamp="1602596292381">
+    <state width="1481" height="233" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1602896582504" />
+    <state width="1481" height="233" key="GridCell.Tab.1.left" timestamp="1602896582504">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1481" height="233" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1602596292381" />
-    <state width="1481" height="233" key="GridCell.Tab.1.right" timestamp="1602596292381">
+    <state width="1481" height="233" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1602896582504" />
+    <state width="1481" height="233" key="GridCell.Tab.1.right" timestamp="1602896582504">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1481" height="233" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1602596292381" />
+    <state width="1481" height="233" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1602896582504" />
     <state x="157" y="0" key="SettingsEditor" timestamp="1602692429328">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="157" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1602692429328" />
-    <state x="261" y="80" key="Vcs.Push.Dialog.v2" timestamp="1602572979533">
+    <state x="261" y="80" key="Vcs.Push.Dialog.v2" timestamp="1602866280569">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="261" y="80" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1602572979533" />
-    <state x="341" y="183" key="run.anything.popup" timestamp="1602568009528">
+    <state x="261" y="80" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1602866280569" />
+    <state x="392" y="22" width="861" height="699" key="git4idea.branch.GitBranchIsNotFullyMergedDialog" timestamp="1602866273721">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="341" y="183" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1602568009528" />
+    <state x="392" y="22" width="861" height="699" key="git4idea.branch.GitBranchIsNotFullyMergedDialog/0.0.1536.824@0.0.1536.824" timestamp="1602866273721" />
+    <state x="341" y="183" key="run.anything.popup" timestamp="1602897352257">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="341" y="183" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1602897352257" />
     <state x="347" y="-1" width="840" height="1034" key="search.everywhere.popup" timestamp="1602565656230">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

@@ -2,7 +2,7 @@ package com.edu_netcracker.todolist.services;
 
 import com.edu_netcracker.todolist.entities.ToDoList;
 
-public interface ToDoListKeeper {
+public interface SaveService {
     /**
      * Записывает существующий список задач в файл
      * @param toDoList - существующий список задач
