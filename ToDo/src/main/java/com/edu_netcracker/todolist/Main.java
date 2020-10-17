@@ -1,6 +1,5 @@
 package com.edu_netcracker.todolist;
 
-import com.edu_netcracker.todolist.entities.ToDoList;
 import com.edu_netcracker.todolist.services.AppService;
 import com.edu_netcracker.todolist.services.impl.AppConsole;
 import org.apache.log4j.LogManager;
@@ -13,8 +12,6 @@ public class Main {
     static final Logger LOGGER = LogManager.getLogger(Main.class);
 
     public static void main(String[] args) throws Exception {
-
-        LOGGER.info("Hello World!");
 
         String command;
         AppService appService = new AppConsole();
@@ -50,11 +47,10 @@ public class Main {
                 case "delete":
                     if (!commands[1].matches("[0-9]+")) {
                         System.out.println("Bad command, try again");
-                        break;
                     } else {
                         appService.deleteTask(Long.parseLong(commands[1]));
-                        break;
                     }
+                    break;
 
                 default:
                     System.out.print("Bad command, try again\n> ");
@@ -67,12 +63,8 @@ public class Main {
         System.out.println("Saving to-do list...");
         appService.saveList();
 
-    }
+        LOGGER.info("Yeah, usual log");
 
-    // проверить работоспособность [v]
-    // сделать нормальное id [v]
-    // обработать ошибки
-    // понять сценарий работы с пользователем [v]
-    // реализовать [v]
+    }
 
 }

@@ -14,10 +14,9 @@ public class AppConsole implements AppService {
     Scanner scanner = new Scanner(System.in);
 
     private ToDoList toDoList;
-    private Object Exception;
 
     @Override
-    public ToDoList start() throws Exception {
+    public void start() throws Exception {
         System.out.print("Start a new to-do list? [y/n]\n> ");
         String input = scanner.nextLine();
         while (!input.equals("y") & !input.equals("n")) {
@@ -38,7 +37,6 @@ public class AppConsole implements AppService {
                 idService.setTaskId(toDoList.getTasks().get(i));
             }
         }
-        return toDoList;
     }
 
     @Override

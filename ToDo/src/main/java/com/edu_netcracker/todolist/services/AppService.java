@@ -7,10 +7,9 @@ public interface AppService {
      * Начинает работу с приложением
      * Предлагает выбор - создать новый лист или загрузить из памяти
      * Соответственно, на данном этапе создаёт лист или загружает сохранённый
-     * @return созданный toDoList
      * @throws Exception
      */
-    ToDoList start() throws Exception;
+    void start() throws Exception;
 
     /**
      * Добавляет Task
