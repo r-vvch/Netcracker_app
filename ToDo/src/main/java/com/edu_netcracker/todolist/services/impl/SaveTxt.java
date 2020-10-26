@@ -3,11 +3,13 @@ package com.edu_netcracker.todolist.services.impl;
 import com.edu_netcracker.todolist.entities.Task;
 import com.edu_netcracker.todolist.entities.ToDoList;
 import com.edu_netcracker.todolist.services.SaveService;
+import org.springframework.stereotype.Service;
 
 import java.io.*;
 import java.util.List;
 import java.util.Scanner;
 
+@Service("save-txt")
 public class SaveTxt implements SaveService {
     @Override
     public void writeToDoList(ToDoList toDoList) throws Exception {

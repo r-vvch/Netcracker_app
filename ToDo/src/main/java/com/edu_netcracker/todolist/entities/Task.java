@@ -1,7 +1,9 @@
 package com.edu_netcracker.todolist.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.springframework.stereotype.Component;
 
+@Component
 public class Task {
     private Long id;
     private String name;

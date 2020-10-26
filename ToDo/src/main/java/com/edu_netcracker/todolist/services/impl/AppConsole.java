@@ -5,13 +5,21 @@ import com.edu_netcracker.todolist.entities.ToDoList;
 import com.edu_netcracker.todolist.services.AppService;
 import com.edu_netcracker.todolist.services.IdService;
 import com.edu_netcracker.todolist.services.SaveService;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
 
 import java.util.Scanner;
 
+@Service
 public class AppConsole implements AppService {
-    IdService idService = new IdSimple();
-    SaveService keeper = new SaveJson();
+    IdService idService;
+    SaveService saveService;
     Scanner scanner = new Scanner(System.in);
+
+    AppConsole(IdService idService, @Qualifier("save-json") SaveService saveService) {
+        this.idService = idService;
+        this.saveService = saveService;
+    }
 
     private ToDoList toDoList;
 
@@ -31,7 +39,7 @@ public class AppConsole implements AppService {
             toDoList.setName(listName);
         } else {
             System.out.println("Loading saved list...");
-            toDoList = keeper.readToDoList();
+            toDoList = saveService.readToDoList();
             idService.setListId(toDoList);
             for (int i = 0; i < toDoList.getTasks().size(); i++) {
                 idService.setTaskId(toDoList.getTasks().get(i));
@@ -72,7 +80,7 @@ public class AppConsole implements AppService {
 
     @Override
     public void saveList() throws Exception {
-        keeper.writeToDoList(toDoList);
+        saveService.writeToDoList(toDoList);
     }
 }
 

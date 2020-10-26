@@ -1,8 +1,11 @@
 package com.edu_netcracker.todolist.entities;
 
+import org.springframework.stereotype.Component;
+
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class ToDoList {
     private Long id;
     private String name;
@@ -10,12 +13,12 @@ public class ToDoList {
 
     public ToDoList() {
         setName("New to-do list");
-        tasks = new ArrayList<Task>();
+        tasks = new ArrayList<>();
     }
 
     public ToDoList(String name) {
         setName(name);
-        tasks = new ArrayList<Task>();
+        tasks = new ArrayList<>();
     }
 
     public Long getId() {
