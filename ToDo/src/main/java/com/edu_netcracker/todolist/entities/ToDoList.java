@@ -1,11 +1,8 @@
 package com.edu_netcracker.todolist.entities;
 
-import org.springframework.stereotype.Component;
-
 import java.util.ArrayList;
 import java.util.List;
 
-@Component
 public class ToDoList {
     private Long id;
     private String name;
