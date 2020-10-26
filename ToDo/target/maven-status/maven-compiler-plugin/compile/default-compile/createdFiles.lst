@@ -1,0 +1,10 @@
+com\edu_netcracker\todolist\entities\Task.class
+com\edu_netcracker\todolist\services\SaveService.class
+com\edu_netcracker\todolist\services\AppService.class
+com\edu_netcracker\todolist\entities\ToDoList.class
+com\edu_netcracker\todolist\Main.class
+com\edu_netcracker\todolist\services\IdService.class
+com\edu_netcracker\todolist\services\impl\AppConsole.class
+com\edu_netcracker\todolist\services\impl\SaveTxt.class
+com\edu_netcracker\todolist\services\impl\IdSimple.class
+com\edu_netcracker\todolist\services\impl\SaveJson.class

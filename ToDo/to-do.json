@@ -1,0 +1,13 @@
+{
+  "id" : -1,
+  "name" : "to-do",
+  "tasks" : [ {
+    "id" : 1,
+    "name" : "task_1",
+    "completion" : false
+  }, {
+    "id" : 2,
+    "name" : "task_2",
+    "completion" : true
+  } ]
+}
