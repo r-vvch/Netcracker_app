@@ -10,12 +10,12 @@ public class ToDoList {
 
     public ToDoList() {
         setName("New to-do list");
-        tasks = new ArrayList<Task>();
+        tasks = new ArrayList<>();
     }
 
     public ToDoList(String name) {
         setName(name);
-        tasks = new ArrayList<Task>();
+        tasks = new ArrayList<>();
     }
 
     public Long getId() {

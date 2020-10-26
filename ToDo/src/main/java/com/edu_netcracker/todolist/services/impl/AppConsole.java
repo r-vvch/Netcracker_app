@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 public class AppConsole implements AppService {
     IdService idService = new IdSimple();
-    SaveService keeper = new SaveJson();
+    SaveService saveJson = new SaveJson();
     Scanner scanner = new Scanner(System.in);
 
     private ToDoList toDoList;
@@ -31,7 +31,7 @@ public class AppConsole implements AppService {
             toDoList.setName(listName);
         } else {
             System.out.println("Loading saved list...");
-            toDoList = keeper.readToDoList();
+            toDoList = saveJson.readToDoList();
             idService.setListId(toDoList);
             for (int i = 0; i < toDoList.getTasks().size(); i++) {
                 idService.setTaskId(toDoList.getTasks().get(i));
@@ -72,7 +72,7 @@ public class AppConsole implements AppService {
 
     @Override
     public void saveList() throws Exception {
-        keeper.writeToDoList(toDoList);
+        saveJson.writeToDoList(toDoList);
     }
 }
 

@@ -20,6 +20,7 @@ public class Main {
         appService.start();
         appService.printList();
         System.out.print("> ");
+        LOGGER.info("Successful start");
 
         command = scanner.nextLine();
         while (!command.equals("exit")) {
@@ -31,6 +32,7 @@ public class Main {
                         buf.append(" ").append(commands[i]);
                     }
                     appService.addTask(buf.toString());
+                    LOGGER.info("Task added");
                     break;
 
                 case "set":
@@ -41,6 +43,7 @@ public class Main {
                     } else {
                         System.out.println("Bad command, try again");
                     }
+                    LOGGER.info("Task completion set");
                     break;
 
                 case "delete":
@@ -49,10 +52,12 @@ public class Main {
                     } else {
                         appService.deleteTask(Long.parseLong(commands[1]));
                     }
+                    LOGGER.info("Task deleted");
                     break;
 
                 default:
                     System.out.print("Bad command, try again\n> ");
+                    LOGGER.info("Bad command");
                     break;
             }
             appService.printList();
@@ -61,8 +66,9 @@ public class Main {
         }
         System.out.println("Saving to-do list...");
         appService.saveList();
+        LOGGER.info("Exit");
 
-        LOGGER.info("Yeah, usual log");
+        LOGGER.info("App execution completed\n");
 
     }
 

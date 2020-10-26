@@ -6,13 +6,13 @@ public interface SaveService {
     /**
      * Записывает существующий список задач в файл
      * @param toDoList - существующий список задач
-     * @throws Exception
+     * @throws Exception - исключение
      */
     void writeToDoList(ToDoList toDoList) throws Exception;
 
     /**
      * Читает список задач из файла и формирует ToDoList
-     * @throws Exception
+     * @throws Exception - исключение
      */
     ToDoList readToDoList() throws Exception;
 

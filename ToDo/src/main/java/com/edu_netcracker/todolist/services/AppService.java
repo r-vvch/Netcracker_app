@@ -1,13 +1,11 @@
 package com.edu_netcracker.todolist.services;
 
-import com.edu_netcracker.todolist.entities.ToDoList;
-
 public interface AppService {
     /**
      * Начинает работу с приложением
      * Предлагает выбор - создать новый лист или загрузить из памяти
      * Соответственно, на данном этапе создаёт лист или загружает сохранённый
-     * @throws Exception
+     * @throws Exception - исключение
      */
     void start() throws Exception;
 
@@ -42,7 +40,7 @@ public interface AppService {
 
     /**
      * Сохраняет текущий toDoList
-     * @throws Exception
+     * @throws Exception - исключение
      */
     void saveList() throws Exception;
 }
