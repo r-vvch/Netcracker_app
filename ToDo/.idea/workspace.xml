@@ -27,7 +27,9 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c3515f7d-c382-4e2e-b331-5f48af2ae37e" name="Default Changelist" comment="readme added" />
+    <list default="true" id="c3515f7d-c382-4e2e-b331-5f48af2ae37e" name="Default Changelist" comment="readme added">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -107,17 +109,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="Application.Main" />
       <item itemvalue="Application.Test" />
@@ -145,6 +136,7 @@
       <workItem from="1603579571179" duration="2772000" />
       <workItem from="1603647418765" duration="9989000" />
       <workItem from="1603708017240" duration="2520000" />
+      <workItem from="1603750163363" duration="475000" />
     </task>
     <task id="LOCAL-00001" summary="basic classes implemented">
       <created>1602124035203</created>
