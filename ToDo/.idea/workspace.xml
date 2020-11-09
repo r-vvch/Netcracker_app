@@ -27,37 +27,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c3515f7d-c382-4e2e-b331-5f48af2ae37e" name="Default Changelist" comment="readme added">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Rest.http" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/edu_netcracker/todolist/Application.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/edu_netcracker/todolist/controllers/rest/AppRestController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/edu_netcracker/todolist/controllers/rest/SaveRestController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/edu_netcracker/todolist/services/impl/AppWeb.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log.out" beforeDir="false" afterPath="$PROJECT_DIR$/log.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/edu_netcracker/todolist/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/edu_netcracker/todolist/services/AppService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/edu_netcracker/todolist/services/AppService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/edu_netcracker/todolist/services/SaveService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/edu_netcracker/todolist/services/SaveService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/edu_netcracker/todolist/services/impl/AppConsole.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/edu_netcracker/todolist/services/impl/SaveJson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/edu_netcracker/todolist/services/impl/SaveJson.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/edu_netcracker/todolist/services/impl/SaveTxt.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ToDo-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/ToDo-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/edu_netcracker/todolist/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/edu_netcracker/todolist/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/edu_netcracker/todolist/services/AppService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/edu_netcracker/todolist/services/AppService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/edu_netcracker/todolist/services/IdService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/edu_netcracker/todolist/services/IdService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/edu_netcracker/todolist/services/SaveService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/edu_netcracker/todolist/services/SaveService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/edu_netcracker/todolist/services/impl/AppConsole.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/edu_netcracker/todolist/services/impl/AppConsole.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/edu_netcracker/todolist/services/impl/IdSimple.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/edu_netcracker/todolist/services/impl/IdSimple.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/edu_netcracker/todolist/services/impl/SaveJson.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/edu_netcracker/todolist/services/impl/SaveJson.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/edu_netcracker/todolist/services/impl/SaveTxt.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/edu_netcracker/todolist/services/impl/SaveTxt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/to-do.json" beforeDir="false" afterPath="$PROJECT_DIR$/to-do.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/to-do.txt" beforeDir="false" />
-    </list>
+    <list default="true" id="c3515f7d-c382-4e2e-b331-5f48af2ae37e" name="Default Changelist" comment="doubtful try" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -208,7 +178,7 @@
       <workItem from="1604618862540" duration="5802000" />
       <workItem from="1604756578608" duration="4169000" />
       <workItem from="1604847779855" duration="1011000" />
-      <workItem from="1604856465645" duration="12408000" />
+      <workItem from="1604856465645" duration="12629000" />
     </task>
     <task id="LOCAL-00001" summary="basic classes implemented">
       <created>1602124035203</created>
@@ -273,7 +243,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603740112388</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="doubtful try">
+      <created>1604885887217</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1604885887218</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -300,7 +277,8 @@
     <MESSAGE value="final console app;&#10;slf4j is working properly, finally!" />
     <MESSAGE value="Spring implemented" />
     <MESSAGE value="readme added" />
-    <option name="LAST_COMMIT_MESSAGE" value="readme added" />
+    <MESSAGE value="doubtful try" />
+    <option name="LAST_COMMIT_MESSAGE" value="doubtful try" />
   </component>
   <component name="WindowStateProjectService">
     <state x="542" y="66" key="#Menus_and_Toolbars" timestamp="1604871441807">
@@ -391,10 +369,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="157" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1602692429328" />
-    <state x="261" y="80" key="Vcs.Push.Dialog.v2" timestamp="1603740117126">
+    <state x="261" y="80" key="Vcs.Push.Dialog.v2" timestamp="1604885932012">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="261" y="80" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1603740117126" />
+    <state x="261" y="80" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1604885932012" />
     <state x="546" y="307" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604885592868">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
