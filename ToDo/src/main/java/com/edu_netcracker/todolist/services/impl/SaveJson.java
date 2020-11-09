@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.util.List;
 
 @Service("save-json")
 public class SaveJson implements SaveService {
@@ -14,14 +15,13 @@ public class SaveJson implements SaveService {
     private static final String FILE_NAME = "to-do.json";
 
     @Override
-    public void writeToDoList(ToDoList toDoList) throws Exception {
-        objectMapper.writerWithDefaultPrettyPrinter().writeValue(new FileWriter(FILE_NAME), toDoList);
+    public void writeToDoList(List<ToDoList> toDoLists) throws Exception {
+        objectMapper.writerWithDefaultPrettyPrinter().writeValue(new FileWriter(FILE_NAME), toDoLists);
     }
 
     @Override
-    public ToDoList readToDoList() throws Exception {
-        return objectMapper.readValue(new FileReader(FILE_NAME), ToDoList.class);
+    public List<ToDoList> readToDoList() throws Exception {
+        return objectMapper.readValue(new FileReader(FILE_NAME), List.class);
     }
-
 
 }

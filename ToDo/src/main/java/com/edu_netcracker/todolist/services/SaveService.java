@@ -3,20 +3,22 @@ package com.edu_netcracker.todolist.services;
 import com.edu_netcracker.todolist.entities.ToDoList;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public interface SaveService {
     /**
-     * Записывает существующий список задач в файл
-     * @param toDoList - существующий список задач
+     * Записывает существующие списки задач в файл
+     * @param toDoLists - существующий массив списков задач
      * @throws Exception - исключение
      */
-    void writeToDoList(ToDoList toDoList) throws Exception;
+    void writeToDoList(List<ToDoList> toDoLists) throws Exception;
 
     /**
-     * Читает список задач из файла и формирует ToDoList
+     * Читает списки задач из файла и формирует ToDoList'ы
      * @throws Exception - исключение
      */
-    ToDoList readToDoList() throws Exception;
+    List<ToDoList> readToDoList() throws Exception;
 
 
 }

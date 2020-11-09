@@ -8,6 +8,6 @@
   }, {
     "id" : 2,
     "name" : "task_2",
-    "completion" : true
+    "completion" : false
   } ]
 }
