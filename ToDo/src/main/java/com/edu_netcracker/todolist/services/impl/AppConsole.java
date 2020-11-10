@@ -6,36 +6,69 @@ import com.edu_netcracker.todolist.services.AppService;
 import com.edu_netcracker.todolist.services.IdService;
 import com.edu_netcracker.todolist.services.SaveService;
 
-import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
 
 public class AppConsole implements AppService {
     IdService idService = new IdSimple();
-    SaveService saveJson = new SaveJson();
-    Scanner scanner = new Scanner(System.in);
+    SaveService saveService = new SaveJson();
 
-    private ToDoList toDoList;
+    private List<ToDoList> notebook = new ArrayList<>();
+    private ToDoList currentToDoList;
 
     @Override
-    public void start() throws Exception {
-        System.out.print("Start a new to-do list? [y/n]\n> ");
-        String input = scanner.nextLine();
-        while (!input.equals("y") & !input.equals("n")) {
-            System.out.print("It's y or n\n> ");
-            input = scanner.nextLine();
-        }
-        if (input.equals("y")) {
-            toDoList = new ToDoList();
-            idService.setListId(toDoList);
-            System.out.print("Enter list name: ");
-            String listName = scanner.nextLine();
-            toDoList.setName(listName);
-        } else {
-            System.out.println("Loading saved list...");
-            toDoList = saveJson.readToDoList();
-            idService.setListId(toDoList);
-            for (int i = 0; i < toDoList.getTasks().size(); i++) {
-                idService.setTaskId(toDoList.getTasks().get(i));
+    public void start() {
+        try {
+            notebook = saveService.loadAll();
+            int lastToDoListId = 0;
+            for (ToDoList bufferToDoList : notebook) {
+                if (bufferToDoList.getId() < lastToDoListId) {
+                    lastToDoListId = bufferToDoList.getId();
+                }
             }
+            int lastTaskId = 0;
+            for (ToDoList bufferToDoList : notebook) {
+                for (int i = 0; i < bufferToDoList.getTasks().size(); i++) {
+                    if (bufferToDoList.getTasks().get(i).getId() > lastTaskId) {
+                        lastTaskId = bufferToDoList.getTasks().get(i).getId();
+                    }
+                }
+            }
+            idService.updateId(lastToDoListId, lastTaskId);
+            printAll();
+        } catch (Exception e) {
+            notebook = new ArrayList<>();
+        }
+    }
+
+    @Override
+    public void setCurrentToDoList(int id) {
+        int i = 0;
+        while (true) {
+            if (notebook.get(i).getId() == id) {
+                currentToDoList = notebook.get(i);
+                break;
+            }
+            i++;
+        }
+    }
+
+    @Override
+    public void addToDoList(String name) {
+        ToDoList toDoList = new ToDoList(name);
+        idService.setToDoListId(toDoList);
+        notebook.add(toDoList);
+    }
+
+    @Override
+    public void deleteToDoList(int id) {
+        int i = 0;
+        while (true) {
+            if (notebook.get(i).getId() == id) {
+                notebook.remove(i);
+                break;
+            }
+            i++;
         }
     }
 
@@ -43,36 +76,83 @@ public class AppConsole implements AppService {
     public void addTask(String name) {
         Task task = new Task(name);
         idService.setTaskId(task);
-        toDoList.addTask(task);
+        currentToDoList.addTask(task);
     }
 
     @Override
-    public void deleteTask(Long id) {
-        toDoList.deleteTask(id - 1L);
-    }
-
-    @Override
-    public void setTaskDone(Long id) {
-        toDoList.getTasks().get(id.intValue() - 1).setCompletion(true);
-    }
-
-    @Override
-    public void setTaskUndone(Long id) {
-        toDoList.getTasks().get(id.intValue() - 1).setCompletion(false);
-    }
-
-    @Override
-    public void printList() {
-        System.out.println(toDoList.getName() + ":");
-        for (int i = 0; i < toDoList.getTasks().size(); i++) {
-            System.out.println(toDoList.getTasks().get(i).getId() + ". " +
-                    toDoList.getTasks().get(i).getName() + " " + toDoList.getTasks().get(i).getPrettyCompletion());
+    public void deleteTask(int id) {
+        int i = 0;
+        while (true) {
+            if (currentToDoList.getTasks().get(i).getId() == id) {
+                currentToDoList.deleteTask(i);
+                break;
+            }
+            i++;
         }
     }
 
     @Override
-    public void saveList() throws Exception {
-        saveJson.writeToDoList(toDoList);
+    public void setTaskDone(int id) {
+        int i = 0;
+        while (true) {
+            if (currentToDoList.getTasks().get(i).getId() == id) {
+                currentToDoList.getTasks().get(i).setCompletion(true);
+                break;
+            }
+            i++;
+        }
     }
+
+    @Override
+    public void setTaskUndone(int id) {
+        int i = 0;
+        while (true) {
+            if (currentToDoList.getTasks().get(i).getId() == id) {
+                currentToDoList.getTasks().get(i).setCompletion(false);
+                break;
+            }
+            i++;
+        }
+    }
+
+    @Override
+    public void printToDoList(ToDoList toDoList) {
+        System.out.println(toDoList.getId() + ". " + toDoList.getName() + ":");
+        for (int i = 0; i < toDoList.getTasks().size(); i++) {
+            System.out.println(toDoList.getTasks().get(i).getId() + ". " +
+                    toDoList.getTasks().get(i).getName() + " " +
+                    toDoList.getTasks().get(i).getPrettyCompletion());
+        }
+    }
+
+    @Override
+    public void printCurrentToDoList() {
+        printToDoList(currentToDoList);
+    }
+
+    @Override
+    public void printAll() {
+        for (ToDoList bufferToDoList : notebook) {
+            printToDoList(bufferToDoList);
+        }
+    }
+
+    @Override
+    public void back() {
+        int i = 0;
+        while (true) {
+            if (currentToDoList.getId() == notebook.get(i).getId()) {
+                notebook.set(i, currentToDoList);
+                break;
+            }
+            i++;
+        }
+    }
+
+    @Override
+    public void saveAll() throws Exception {
+        saveService.saveAll(notebook);
+    }
+
 }
 

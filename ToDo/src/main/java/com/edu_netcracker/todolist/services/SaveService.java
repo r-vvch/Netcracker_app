@@ -1,20 +1,20 @@
 package com.edu_netcracker.todolist.services;
 
 import com.edu_netcracker.todolist.entities.ToDoList;
+import java.util.List;
 
 public interface SaveService {
     /**
-     * Записывает существующий список задач в файл
-     * @param toDoList - существующий список задач
-     * @throws Exception - исключение
+     * Записывает существующие списки задач в файл
+     * @param notebook все списки задач
+     * @throws Exception исключение
      */
-    void writeToDoList(ToDoList toDoList) throws Exception;
+    void saveAll(List<ToDoList> notebook) throws Exception;
 
     /**
-     * Читает список задач из файла и формирует ToDoList
-     * @throws Exception - исключение
+     * Загружает списки задач из файла
+     * @throws Exception исключение
      */
-    ToDoList readToDoList() throws Exception;
-
+    List<ToDoList> loadAll() throws Exception;
 
 }

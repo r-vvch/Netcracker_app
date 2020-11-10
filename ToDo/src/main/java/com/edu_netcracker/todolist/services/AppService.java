@@ -1,46 +1,84 @@
 package com.edu_netcracker.todolist.services;
 
+import com.edu_netcracker.todolist.entities.ToDoList;
+
 public interface AppService {
     /**
      * Начинает работу с приложением
-     * Предлагает выбор - создать новый лист или загрузить из памяти
-     * Соответственно, на данном этапе создаёт лист или загружает сохранённый
+     * Выводит весь Notebook - все существующие списки задач
+     * Предлагает выбор - создать новый список задач или выбрать существующий
+     * Соответственно, на данном этапе создаёт список задач или загружает сохранённый
      * @throws Exception - исключение
      */
     void start() throws Exception;
 
     /**
+     * Устанавливает текущий список задач
+     * @param id id выбранного списка задач
+     */
+    void setCurrentToDoList(int id);
+
+    /**
+     * Добавляет ToDoList
+     * @param name имя ToDoList-а
+     */
+    void addToDoList(String name);
+
+    /**
+     * Удаляет ToDoList
+     * @param id id, по которому производится удаление
+     */
+    void deleteToDoList(int id);
+
+    /**
      * Добавляет Task
-     * @param name - имя Task'а
+     * @param name имя Task-а
      */
     void addTask(String name);
 
     /**
      * Удаляет заданный по id Task
-     * @param id - id, по которому производится удаление
+     * @param id id, по которому производится удаление
      */
-    void deleteTask(Long id);
+    void deleteTask(int id);
 
     /**
      * Задаёт Task'у с данным id статус выполненного
-     * @param id - id, по которому производятся изменения
+     * @param id id, по которому производятся изменения
      */
-    void setTaskDone(Long id);
+    void setTaskDone(int id);
 
     /**
      * Задаёт Task'у с данным id статус невыполненного
      * @param id - id, по которому производятся изменения
      */
-    void setTaskUndone(Long id);
+    void setTaskUndone(int id);
 
     /**
-     * Печатает текущий toDoList
+     * Печатает переданный в аргументе ToDoList
+     * @param toDoList печатаемый список задач
      */
-    void printList();
+    void printToDoList(ToDoList toDoList);
 
     /**
-     * Сохраняет текущий toDoList
-     * @throws Exception - исключение
+     * Печатает текущий ToDoList
      */
-    void saveList() throws Exception;
+    void printCurrentToDoList();
+
+    /**
+     * Печатает все ToDoList-ы
+     */
+    void printAll();
+
+    /**
+     * Возвращается из currentToDoList
+     */
+    void back();
+
+    /**
+     * Сохраняет все ToDoList-ы в файл
+     * @throws Exception исключение
+     */
+    void saveAll() throws Exception;
+
 }

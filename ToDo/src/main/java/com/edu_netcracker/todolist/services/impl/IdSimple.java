@@ -5,12 +5,12 @@ import com.edu_netcracker.todolist.entities.ToDoList;
 import com.edu_netcracker.todolist.services.IdService;
 
 public class IdSimple implements IdService {
-    private Long taskId;
-    private Long listId;
+    private int taskId;
+    private int toDoListId;
 
     public IdSimple() {
-        taskId = 0L;
-        listId = 0L;
+        taskId = 0;
+        toDoListId = 0;
     }
 
     @Override
@@ -20,8 +20,14 @@ public class IdSimple implements IdService {
     }
 
     @Override
-    public void setListId(ToDoList toDoList) {
-        listId -= 1;
-        toDoList.setId(listId);
+    public void setToDoListId(ToDoList toDoList) {
+        toDoListId -= 1;
+        toDoList.setId(toDoListId);
+    }
+
+    @Override
+    public void updateId(int listId, int taskId) {
+        this.toDoListId = listId;
+        this.taskId = taskId;
     }
 }

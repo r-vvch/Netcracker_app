@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ToDoList {
-    private Long id;
+    private int id;
     private String name;
     private List<Task> tasks;
 
@@ -18,7 +18,7 @@ public class ToDoList {
         tasks = new ArrayList<>();
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
@@ -30,7 +30,7 @@ public class ToDoList {
         return tasks;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -42,22 +42,8 @@ public class ToDoList {
         tasks.add(task);
     }
 
-    public void deleteTask(Long id) {
-        tasks.remove(id.intValue());
-    }
-
-    public void printList() {
-        System.out.println(getName() + ":");
-        for (int i = 0; i < getTasks().size(); i++) {
-            System.out.println((i + 1) + ". " + getTasks().get(i).getName() + " " + getTasks().get(i).getPrettyCompletion());
-        }
-    }
-
-    public void printIdList() {
-        System.out.println(getId() + ". " + getName() + ":");
-        for (int i = 0; i < getTasks().size(); i++) {
-            System.out.println(getTasks().get(i).getId() + ". " + getTasks().get(i).getName() + " " + getTasks().get(i).getPrettyCompletion());
-        }
+    public void deleteTask(int id) {
+        tasks.remove(id);
     }
 
 }

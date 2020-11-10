@@ -3,7 +3,7 @@ package com.edu_netcracker.todolist.entities;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class Task {
-    private Long id;
+    private int id;
     private String name;
     private boolean isDone = false;
 
@@ -17,7 +17,7 @@ public class Task {
         setCompletion(false);
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
@@ -38,7 +38,7 @@ public class Task {
         }
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

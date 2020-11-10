@@ -12,8 +12,16 @@ public interface IdService {
 
     /**
      * Задаёт id ToDoList'а
-     * @param toDoList - ToDoList, которому задаётся id
+     * @param toDoList ToDoList, которому задаётся id
      */
-    void setListId(ToDoList toDoList);
+    void setToDoListId(ToDoList toDoList);
+
+    /**
+     * Обновляет id
+     * Необходим для обновления id полсе загрузки списков задач из памяти
+     * @param toDoListId последний id, заданный ToDoList-у
+     * @param taskId последний id, заданный Task-у
+     */
+    void updateId(int toDoListId, int taskId);
 
 }
