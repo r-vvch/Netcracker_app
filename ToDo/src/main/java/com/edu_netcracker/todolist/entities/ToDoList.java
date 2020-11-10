@@ -46,4 +46,15 @@ public class ToDoList {
         tasks.remove(id);
     }
 
+    public void renameTask(int id, String newName) {
+        int i = 0;
+        while (true) {
+            if (tasks.get(i).getId() == id) {
+                tasks.get(i).setName(newName);
+                break;
+            }
+            i++;
+        }
+    }
+
 }

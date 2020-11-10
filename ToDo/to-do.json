@@ -19,19 +19,15 @@
     "completion" : false
   } ]
 }, {
-  "id" : -4,
-  "name" : "t4",
+  "id" : -6,
+  "name" : "t3",
   "tasks" : [ {
-    "id" : 4,
+    "id" : 7,
     "name" : "task1",
-    "completion" : true
-  } ]
-}, {
-  "id" : -5,
-  "name" : "t5",
-  "tasks" : [ {
-    "id" : 6,
-    "name" : "task1",
+    "completion" : false
+  }, {
+    "id" : 8,
+    "name" : "task_n",
     "completion" : false
   } ]
 } ]
