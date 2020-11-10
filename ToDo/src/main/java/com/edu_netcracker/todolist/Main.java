@@ -5,15 +5,17 @@ import com.edu_netcracker.todolist.services.impl.AppConsole;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Scanner;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 
 public class Main {
     static final Logger LOGGER = LoggerFactory.getLogger(Main.class);
 
     public static void main(String[] args) throws Exception {
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
 
         String command;
-        AppService appService = new AppConsole();
+        AppService appService = context.getBean(AppService.class);
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Welcome to the world's finest to-do app!");

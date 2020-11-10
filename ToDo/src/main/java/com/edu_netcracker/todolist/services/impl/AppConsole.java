@@ -5,13 +5,20 @@ import com.edu_netcracker.todolist.entities.ToDoList;
 import com.edu_netcracker.todolist.services.AppService;
 import com.edu_netcracker.todolist.services.IdService;
 import com.edu_netcracker.todolist.services.SaveService;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Service
 public class AppConsole implements AppService {
-    IdService idService = new IdSimple();
-    SaveService saveService = new SaveJson();
+    IdService idService;
+    SaveService saveService;
+
+    AppConsole(IdService idService, SaveService saveService) {
+        this.idService = idService;
+        this.saveService = saveService;
+    }
 
     private List<ToDoList> notebook = new ArrayList<>();
     private ToDoList currentToDoList;

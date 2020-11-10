@@ -8,3 +8,4 @@ com\edu_netcracker\todolist\services\impl\AppConsole.class
 com\edu_netcracker\todolist\services\impl\IdSimple.class
 com\edu_netcracker\todolist\services\impl\SaveJson$1.class
 com\edu_netcracker\todolist\services\impl\SaveJson.class
+com\edu_netcracker\todolist\SpringConfig.class

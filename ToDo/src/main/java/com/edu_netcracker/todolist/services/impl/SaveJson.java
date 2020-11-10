@@ -4,11 +4,13 @@ import com.edu_netcracker.todolist.entities.ToDoList;
 import com.edu_netcracker.todolist.services.SaveService;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.stereotype.Service;
 
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.List;
 
+@Service
 public class SaveJson implements SaveService {
     private ObjectMapper objectMapper = new ObjectMapper();
     private static final String FILE_NAME = "to-do.json";

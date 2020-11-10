@@ -2,7 +2,9 @@ package com.edu_netcracker.todolist.services;
 
 import com.edu_netcracker.todolist.entities.ToDoList;
 import java.util.List;
+import org.springframework.stereotype.Service;
 
+@Service
 public interface SaveService {
     /**
      * Записывает существующие списки задач в файл

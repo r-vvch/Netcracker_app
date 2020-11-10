@@ -1,7 +1,9 @@
 package com.edu_netcracker.todolist.services;
 
 import com.edu_netcracker.todolist.entities.ToDoList;
+import org.springframework.stereotype.Service;
 
+@Service
 public interface AppService {
     /**
      * Начинает работу с приложением
