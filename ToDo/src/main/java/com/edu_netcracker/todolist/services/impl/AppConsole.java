@@ -80,6 +80,18 @@ public class AppConsole implements AppService {
     }
 
     @Override
+    public void renameToDoList(int id, String newName) {
+        int i = 0;
+        while (true) {
+            if (notebook.get(i).getId() == id) {
+                notebook.get(i).setName(newName);
+                break;
+            }
+            i++;
+        }
+    }
+
+    @Override
     public void addTask(String name) {
         Task task = new Task(name);
         idService.setTaskId(task);
@@ -96,6 +108,11 @@ public class AppConsole implements AppService {
             }
             i++;
         }
+    }
+
+    @Override
+    public void renameTask(int id, String newName) {
+        currentToDoList.renameTask(id, newName);
     }
 
     @Override

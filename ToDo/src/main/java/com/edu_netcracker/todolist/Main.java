@@ -47,6 +47,17 @@ public class Main {
                     }
                     break;
 
+                case "rename":
+                    // переименовываем конкретный список задач
+                    if (!commands[1].matches("-[0-9]+")) {
+                        System.out.print("Bad command, try again\n");
+                        LOGGER.info("Bad command");
+                    } else {
+                        appService.renameToDoList(Integer.parseInt(commands[1]), commands[2]);
+                        LOGGER.info("To-do list renamed");
+                    }
+                    break;
+
                 case "select":
                     // выбираем конкретный список задач, оперируем с ним
                     if (!commands[1].matches("-[0-9]+")) {
@@ -88,9 +99,18 @@ public class Main {
                                         System.out.println("Bad command, try again");
                                     } else {
                                         appService.deleteTask(Integer.parseInt(commandsCurrentList[1]));
+                                        LOGGER.info("Task deleted");
                                     }
-                                    LOGGER.info("Task deleted");
                                     break;
+
+                                case "rename":
+                                    if (!commandsCurrentList[1].matches("[0-9]+")) {
+                                        System.out.println("Bad command, try again");
+                                    } else {
+                                        appService.renameTask(Integer.parseInt(commandsCurrentList[1]),
+                                                commandsCurrentList[2]);
+                                        LOGGER.info("Task renamed");
+                                    }
 
                                 default:
                                     System.out.print("Bad command, try again\n> ");
@@ -118,6 +138,7 @@ public class Main {
             System.out.print("> ");
             command = scanner.nextLine();
         }
+        // exit
         System.out.println("Saving notebook...");
         appService.saveAll();
         LOGGER.info("Exit");

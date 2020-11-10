@@ -33,6 +33,13 @@ public interface AppService {
     void deleteToDoList(int id);
 
     /**
+     * Переименовывает ToDoList
+     * @param id id переименовываемого списка задач
+     * @param newName новое имя
+     */
+    void renameToDoList(int id, String newName);
+
+    /**
      * Добавляет Task
      * @param name имя Task-а
      */
@@ -43,6 +50,13 @@ public interface AppService {
      * @param id id, по которому производится удаление
      */
     void deleteTask(int id);
+
+    /**
+     * Переименовывает Task
+     * @param id id переименовываемой задачи
+     * @param newName новое имя
+     */
+    void renameTask(int id, String newName);
 
     /**
      * Задаёт Task'у с данным id статус выполненного
