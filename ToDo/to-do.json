@@ -1,33 +1,29 @@
 [ {
   "id" : -1,
-  "name" : "t1",
+  "name" : "list_1",
   "tasks" : [ {
     "id" : 1,
-    "name" : "task1",
+    "name" : "task_1",
     "completion" : false
   }, {
     "id" : 3,
-    "name" : "task3",
+    "name" : "task_3",
     "completion" : true
   } ]
 }, {
   "id" : -2,
-  "name" : "t2",
+  "name" : "list_2",
   "tasks" : [ {
-    "id" : 5,
-    "name" : "task1",
+    "id" : 4,
+    "name" : "task_4",
     "completion" : false
-  }, {
-    "id" : 7,
-    "name" : "task_n",
-    "completion" : true
   } ]
 }, {
   "id" : -3,
-  "name" : "t_n",
+  "name" : "list_3",
   "tasks" : [ {
-    "id" : 9,
-    "name" : "task_n",
+    "id" : 5,
+    "name" : "task_5",
     "completion" : true
   } ]
 } ]
